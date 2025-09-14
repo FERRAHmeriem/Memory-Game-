@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    transition: all 1s;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(to bottom right ,#d1b6a3 ,#8d664b );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.wrapper{
+     box-sizing: content-box;
+     background-color: rgba(0, 0, 0, 0.078);
+     border: 1px solid black;
+     border-radius: 0.5em;
+     width:1000px;
+     padding: 2.5em 3em;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 10px;
+}
+.states-container{
+    text-align: left;
+    margin-bottom: 1.2em;
+}
+.states-container span {
+    font-weight: bold;
+}
+.game-container{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+    display: grid;
+    width: 100%;
+    position: relative;
+    gap: 5px;
+}
+.card-container{
+    position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
+    overflow: hidden;
+}
+img{
+    filter: grayscale(50%);
+    width: 6.5em;
+    height: 6.5em;  
+}
+.before ,
+ .after {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #000;
+    transition: transform 1s ease-out;
+    backface-visibility: hidden;
+
+}
+.before{
+    background-color: #499288;
+    font-size: 2.8em;
+    font-weight: 600;
+}
+.after{
+    background-color: #d3d3d3;
+    transform: rotateY(180deg);
+}
+.card-container.flipped .before {
+    transform: rotateY(180deg);
+}
+.card-container.flipped .after {
+    transform: rotateY(0deg);
+}
+
+
+.control-game{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right ,#d1b6a3 ,#8d664b );
+    top: 0;
+}
+button{
+    border: none;
+    border-radius: 10px;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    font-weight: 600;
+}
+#stop{
+    font-size: 1.1em;
+    
+    background-color: #000000;
+    color: aliceblue;
+
+
+}
+.moves , .times{
+font-size: 20px;
+}
+.hide{
+ display: none;
+}
+#result {
+    text-align: center;
+  }
+  #result h2 {
+    font-size: 2.5em;
+  }
+  #result h4 {
+    font-size: 1.8em;
+    margin: 0.5em 0 1em 0 ;
+  }
+  #start {
+    background-color: #5e8d4ba8;
+    color: aliceblue;
+    padding: 20px 40px;
+    letter-spacing: 2px;
+    border: 2px solid black;
+    font-size: 20px;
+   
+    
+  }
+  #start:hover{
+    background-color: #47683aa8;
+    letter-spacing: 5px;
+  }
+  button:hover{
+    letter-spacing: 5px;
+
+  }
+  @media screen and (max-width: 600px) {
+    .wrapper{
+        border: none;
+        height: 100%;
+        width:100% ;
+        gap: 50px;
+    }
+    .card-container{
+        
+        width: 4.75em;
+        height: 4.75em;
+        
+    }
+    img{
+        filter: grayscale(50%);
+        width: 5em;
+        height: 5em;  
+    }
+  }
